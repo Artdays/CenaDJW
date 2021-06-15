@@ -56,7 +56,7 @@ start()
 	for(var i=0; i<this.qtdestars; i++) {
 			var x = Math.random()*this.width;
 			var y =  Math.random()*this.height;
-			var size =  Math.random()*15+5;
+			var size =  Math.random()*50+20;
 			var vel = (Math.random()*(this.maxVelocity - this.minVelocity))+this.minVelocity;
 			this.star = new Star(x,y, size,vel );
 		this.stars[i] = this.star;
@@ -72,13 +72,12 @@ start()
 	
 }
 
-}
+
 
 	desenha()
 	{
 		this.ctx.fillStyle = '#29381F';
 		this.ctx.fillRect(0, 0, this.width, this.height);
-		
 		this.ctx.fillStyle = '#597543';
 		
 		for(var i=0; i<this.stars.length;i++) {
@@ -96,7 +95,7 @@ start()
 		star.y += dt * star.velocity;
 		if(star.y > this.height) {
 			var x = Math.random()*this.width;
-			var size =  Math.random()*30+10;
+			var size =  Math.random()*50+20;
 			var vel = (Math.random()*(this.maxVelocity - this.minVelocity))+this.minVelocity;
 			let s = new Star(x, 0,size, vel);		
 		 	this.stars[i] = s;
